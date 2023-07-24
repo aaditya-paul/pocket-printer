@@ -1,18 +1,21 @@
-import React from "react";
+"use client";
+
+import React, {useState} from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-// import {} from "@fortawesome/free-regular-svg-icons";
 import {
   faMagnifyingGlass,
   faBagShopping,
+  faBars,
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
-import Products from "@/app/products/page";
 
 function NavigationBar({page}) {
-  console.log(page);
+  const [toggle, setToggle] = useState(false);
+
   return (
     <div>
-      <div className="flex justify-center m-5">
+      {/* dektop */}
+      <div className="hidden justify-center m-5 md:flex">
         <Link href="/">
           <p className=" text-slate-700 p-5 text-2xl">
             Pocket~Prints <sup>TM</sup>
@@ -67,6 +70,34 @@ function NavigationBar({page}) {
               <FontAwesomeIcon icon={faBagShopping} />
             </p>
           </Link>
+        </div>
+      </div>
+      {/* mobile */}
+      <div className="md:hidden  p-5">
+        <div className="flex justify-between">
+          <Link href="/">
+            <p className=" text-slate-700 sm:text-lg md:text-xl font-medium">
+              Pocket~Prints <sup>TM</sup>
+            </p>
+          </Link>
+          <button
+            className={toggle ? "hidden" : "block"}
+            onClick={() => {
+              setToggle(!toggle);
+            }}
+          >
+            <FontAwesomeIcon
+              icon={faBars}
+              className={`text-2xl align-middle `}
+            />
+          </button>
+          {toggle ? (
+            <div>
+              <p>hi</p>
+            </div>
+          ) : (
+            <div className=" hidden"></div>
+          )}
         </div>
       </div>
     </div>
