@@ -2,4 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+::-moz-selection { /* Code for Firefox */
+  color: rgba(107, 47, 219, 0.849);
+  background: rgba(107, 226, 241, 0.856);
+}
+
+::selection {
+  color: rgba(107, 47, 219, 0.849);
+  background: rgba(107, 226, 241, 0.856);
+}
+
 

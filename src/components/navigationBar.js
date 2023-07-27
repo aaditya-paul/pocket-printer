@@ -6,12 +6,15 @@ import {
   faMagnifyingGlass,
   faBagShopping,
   faBars,
+  faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 
 function NavigationBar({page}) {
   const [toggle, setToggle] = useState(false);
-
+  toggle
+    ? (document.body.style.overflow = "hidden")
+    : (document.body.style.overflow = "auto");
   return (
     <div>
       {/* dektop */}
@@ -81,23 +84,56 @@ function NavigationBar({page}) {
             </p>
           </Link>
           <button
-            className={toggle ? "hidden" : "block"}
             onClick={() => {
               setToggle(!toggle);
             }}
           >
             <FontAwesomeIcon
-              icon={faBars}
+              icon={!toggle ? faBars : faXmark}
               className={`text-2xl align-middle `}
             />
           </button>
-          {toggle ? (
-            <div>
-              <p>hi</p>
+
+          <div
+            className={`w-full top-16 fixed z-50 h-full bg-white ${
+              toggle ? "right-0" : "-right-[100%]"
+            } duration-500 transition-all text-xl`}
+          >
+            <div className="">
+              <div className="text-slate-700 text-md flex flex-col  ">
+                <Link
+                  href="/"
+                  className={
+                    page === "home"
+                      ? `p-5 justify-center text-center  underline underline-offset-8 hover:cursor-pointer`
+                      : `p-5 justify-center text-center  hover:underline underline-offset-8 hover:cursor-pointer`
+                  }
+                >
+                  Home
+                </Link>
+                <Link
+                  href={`/products`}
+                  className={
+                    page === "products"
+                      ? `p-5 justify-center text-center  underline underline-offset-8 hover:cursor-pointer`
+                      : `p-5 justify-center text-center  hover:underline underline-offset-8 hover:cursor-pointer`
+                  }
+                >
+                  Products
+                </Link>
+                <Link
+                  href="/contact"
+                  className={
+                    page === "contact"
+                      ? `p-5 justify-center text-center  underline underline-offset-8 hover:cursor-pointer`
+                      : `p-5 justify-center text-center  hover:underline underline-offset-8 hover:cursor-pointer`
+                  }
+                >
+                  Contact
+                </Link>
+              </div>
             </div>
-          ) : (
-            <div className=" hidden"></div>
-          )}
+          </div>
         </div>
       </div>
     </div>
