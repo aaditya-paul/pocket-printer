@@ -13,7 +13,10 @@ import Link from "next/link";
 function NavigationBar({page}) {
   const [toggle, setToggle] = useState(false);
   useEffect(() => {
+    // Code to toggle the overflow property based on the `toggle` state
     document.body.style.overflow = toggle ? "hidden" : "auto";
+
+    // Clean up: Reset the overflow property when the component unmounts
     return () => {
       document.body.style.overflow = "auto";
     };
@@ -23,7 +26,7 @@ function NavigationBar({page}) {
       {/* dektop */}
       <div className="hidden justify-center m-5 md:flex">
         <Link href="/">
-          <p className=" text-slate-700 p-5 text-2xl">
+          <p className=" text-slate-700 p-5 text-2xl font-semibold">
             Pocket~Prints <sup>TM</sup>
           </p>
         </Link>

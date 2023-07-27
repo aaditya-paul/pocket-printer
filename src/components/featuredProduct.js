@@ -1,7 +1,9 @@
 import Image from "next/image";
 import React from "react";
-import {Rating} from "@mui/material";
 import Link from "next/link";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faStar} from "@fortawesome/free-solid-svg-icons";
+import {Rating} from "@mui/material";
 
 import colorfulRoll from "../../public/assets/products/colorful-rolls/colorful-adhesive.webp";
 import PP1R from "../../public/assets/products/Pocket Printer-1-roll/green.webp";
@@ -51,7 +53,7 @@ function FeaturedProduct() {
   return (
     <div className="md:my-10 py-5 px-5 md:px-20">
       <div>
-        <p className=" font-bold font-assistant text-2xl md:text-3xl underline underline-offset-8 decoration-double text-gray-800">
+        <p className=" font-bold font-assistant text-2xl md:text-3xl text-gray-800">
           Featured Products
         </p>
       </div>
@@ -85,6 +87,7 @@ function FeaturedProduct() {
                         readOnly
                       />
                     </p>
+
                     <p>({item.people_rated})</p>
                   </div>
                   <div className="flex pt-1 items-center">

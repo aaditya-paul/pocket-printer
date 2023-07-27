@@ -9,7 +9,7 @@ function Home() {
     <div>
       <NavigationBar page="home" />
       <div>
-        <div className="relative h-[200px] md:h-[650px]">
+        {/* <div className="relative h-[200px] md:h-[650px]">
           <Image
             src={PromotionalVideo}
             priority
@@ -17,10 +17,10 @@ function Home() {
             placeholder="blur"
             layout="fill"
           />
-        </div>
+        </div> */}
         <div className="flex justify-center">
-          <div className="md:absolute bottom-[30%]  items-center flex flex-col justify-center md:p-5 p-2 pt-5">
-            <p className="pb-1 md:pb-5 text-3xl  md:text-5xl text-black font-assistant font-bold ">
+          <div className=" bottom-[30%]  items-center flex flex-col justify-center md:p-5 p-2 pt-5">
+            <p className="pb-1 md:pb-5 text-3xl  md:text-5xl text-black font-assistant  ">
               Thermal Pocket Printer
             </p>
             <p className="pb-1 md:pb-5 text-xl md:text-xl text-[#121212bf] font-assistant font-thin">
