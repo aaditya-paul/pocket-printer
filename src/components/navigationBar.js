@@ -1,6 +1,6 @@
 "use client";
 
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {
   faMagnifyingGlass,
@@ -12,9 +12,12 @@ import Link from "next/link";
 
 function NavigationBar({page}) {
   const [toggle, setToggle] = useState(false);
-  toggle
-    ? (document.body.style.overflow = "hidden")
-    : (document.body.style.overflow = "auto");
+  useEffect(() => {
+    document.body.style.overflow = toggle ? "hidden" : "auto";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [toggle]);
   return (
     <div>
       {/* dektop */}

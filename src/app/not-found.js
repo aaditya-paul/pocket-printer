@@ -6,7 +6,7 @@ function NotFound() {
   return (
     <div>
       <div>
-        <NavigationBar />
+        <NavigationBar page="not-found" />
       </div>
       <div className=" text-slate-800 text-4xl justify-center flex-col p-10">
         <p className="text-center p-2">404</p>
