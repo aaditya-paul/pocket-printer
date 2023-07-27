@@ -3,7 +3,7 @@ import React from "react";
 import Link from "next/link";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faStar} from "@fortawesome/free-solid-svg-icons";
-// import {Rating} from "@mui/material";
+import {Rating} from "@mui/material";
 
 import colorfulRoll from "../../public/assets/products/colorful-rolls/colorful-adhesive.webp";
 import PP1R from "../../public/assets/products/Pocket Printer-1-roll/green.webp";
@@ -80,12 +80,12 @@ function FeaturedProduct() {
                   </p>
                   <div className="flex">
                     <p>
-                      {/* <Rating
+                      <Rating
                         name="half-rating-read"
                         defaultValue={item.rating}
                         precision={0.5}
                         readOnly
-                      /> */}
+                      />
                     </p>
 
                     <p>({item.people_rated})</p>
