@@ -1,7 +1,6 @@
 import React from "react";
 import NavigationBar from "./navigationBar";
 import Image from "next/image";
-import PromotionalVideo from "../../public/assets/promotional-video.webp";
 import FeaturedProduct from "./featuredProduct";
 
 function Home() {
